@@ -10,5 +10,6 @@ export function useRegister({queryConfig={}}={}) {
 }
 
 export function useDataResults({queryConfig={}}={}) {
+    
     return useMutation(dataResults, queryConfig)
 }
