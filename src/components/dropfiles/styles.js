@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lightgreen, yellow, strawberry } from "../../utils"
+import { yellow, strawberry } from "../../utils"
 
 export const Help = styled.button`
       background-color: ${yellow};

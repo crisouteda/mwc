@@ -1,5 +1,4 @@
 import React from "react"
-import {ModalContainer, ModalBg } from "./style"
 import ReactDOM from 'react-dom';
 import './Modal.css'
 

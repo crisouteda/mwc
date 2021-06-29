@@ -30,7 +30,7 @@ export function Dropfiles({setResponse}) {
     })
     
   }, [])
-  const {acceptedFiles, getRootProps, getInputProps} = useDropzone({onDrop})
+  const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   useEffect(() => {
     if (usedDrop){
