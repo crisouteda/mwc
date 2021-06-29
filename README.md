@@ -12,6 +12,59 @@ This repository contains code for the project build for Nuwe's Hackaton during B
 
 ## Folder structure 📁
 
+src/
+┣ api/
+┃ ┗ user.js
+┣ assets/
+┃ ┣ icons/
+┃ ┃ ┣ Nuwe.js
+┃ ┃ ┣ consent.svg
+┃ ┃ ┗ stadistics.svg
+┃ ┗ images/
+┃   ┗ cwsd.png
+┣ components/
+┃ ┣ dropfiles/
+┃ ┃ ┣ Dropfiles.js
+┃ ┃ ┣ index.js
+┃ ┃ ┗ styles.js
+┃ ┣ modal/
+┃ ┃ ┣ Modal.css
+┃ ┃ ┣ Modal.js
+┃ ┃ ┗ index.js
+┃ ┣ result/
+┃ ┃ ┣ Result.js
+┃ ┃ ┣ index.js
+┃ ┃ ┗ styles.js
+┃ ┗ index.js
+┣ hooks/
+┃ ┣ queries/
+┃ ┃ ┗ user.js
+┃ ┗ useModal/
+┃   ┗ index.js
+┣ layout/
+┃ ┗ index.js
+┣ utils/
+┃ ┣ IsPhone.js
+┃ ┣ colors.js
+┃ ┗ index.js
+┣ views/
+┃ ┣ login/
+┃ ┃ ┣ Login.js
+┃ ┃ ┣ LoginForms.js
+┃ ┃ ┗ index.js
+┃ ┣ main/
+┃ ┃ ┣ Main.js
+┃ ┃ ┣ index.js
+┃ ┃ ┗ styles.js
+┃ ┣ register/
+┃ ┃ ┣ Register.js
+┃ ┃ ┣ RegisterForms.js
+┃ ┃ ┗ index.js
+┃ ┗ index.js
+┣ App.css
+┣ App.js
+┣ index.css
+┗ index.js
 
 ## Libraries used 📚
 
@@ -28,7 +81,7 @@ Some of the libraries used were:
 ## Live preview 📳
 
 Site was deployed in Netlify. 
-[Click here to go to the deployed site](https://****.netlify.app/)
+[Click here to go to the deployed site](https://nuwerianos.netlify.app/)
 
 ## Run this project 🏃‍♀️
 
@@ -46,7 +99,23 @@ yarn start
 Project will run in http://localhost:3000 if available, otherwise check your terminal.
 
 ## Authors 👩‍💻
+**Front-end team**
 - [Cristina Outeda (crisouteda)](https://github.com/crisouteda)
 - [Judith Martínez (judithmg)](https://github.com/judithmg)
 - [John Vincent (jvincent3)](https://github.com/jvincent3)
+
+**Back-end team**
+- [Roberto Villares (rovilram)](https://github.com/rovilram)
+- [Ivan Navarro (Ivacks)](https://github.com/Ivacks)
+- [Chris García (chrisDevMode)](https://github.com/chrisDevMode)
+
+**Data Science team**
+- [Arnald Gabarrell (Arnaldgg7)](https://github.com/Arnaldgg7)
+- [Antonia Villarino (---)](https://github.com/---)
+
+
+
+
+
+
 
