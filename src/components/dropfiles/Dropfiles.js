@@ -53,7 +53,7 @@ export function Dropfiles({setResponse}) {
         toggle()
       }
     }
-  }, [content, setDataResult, setResponse, toggle, useDrop])
+  }, [content, setDataResult, setResponse, toggle, usedDrop])
 
   return (
     <Container>

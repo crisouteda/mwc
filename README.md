@@ -5,20 +5,24 @@
 
 This repository contains code for the project build for Nuwe's Hackaton during Barcelona's 2021 Mobile World Congress. This is a **React** project in **Javascript** build with `create-react-app`.
 
-## Data Science 👨‍📐
+# Data Science 👨‍📐
 
 
+# Frontend 🎮
 
 ## Folder structure 📁
 
 
 ## Libraries used 📚
 
+Some of the libraries used were:
+
 - **`axios`** allows us to send requests to the backend
 - **`styled-components`** to write actual CSS in our JS files; writing tagged template literals we can create reusable components to style our app 
 - **`formik`** to easily manipulate forms, validate forms and deal with errors
-- **`yup`** to 
-- **`axios`**
+- **`yup`** to deal with form validations
+- **`react-dropzone`** is a hook used to create drag'n'drop zone for files
+- **`chakra-ui`** is a simple, modular and accessible component library that gives us the building blocks for our React application
 
 
 ## Live preview 📳
