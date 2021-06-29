@@ -1,72 +1,76 @@
-import React, {useCallback, useState, useEffect} from 'react'
-import {useDropzone} from 'react-dropzone'
-import {useDataResults} from '../../hooks/queries/user'
-import dropImg from '../../assets/icons/consent.svg'
-import useModal from '../../hooks/useModal'
-import { Container, Button, Help } from './styles'
-import { Modal } from "../modal"
+import React, { useCallback, useState, useEffect } from "react";
+import { useDropzone } from "react-dropzone";
+import { useDataResults } from "../../hooks/queries/user";
+import dropImg from "../../assets/icons/consent.svg";
+import useModal from "../../hooks/useModal";
+import { Container, Button, Help } from "./styles";
+import { Modal } from "../modal";
 
-export function Dropfiles({setResponse}) {
-    const [content, setContent] = useState({})
+export function Dropfiles({ setResponse }) {
+  const [content, setContent] = useState({});
 
-    const { isShowing, toggle } = useModal();
+  const { isShowing, toggle } = useModal();
 
-    const [usedDrop, setUsedDrop] = useState(false)
-    const setDataResult = useDataResults()
-    
+  const [usedDrop, setUsedDrop] = useState(false);
+  const setDataResult = useDataResults();
+
   const onDrop = useCallback((acceptedFiles) => {
-    setUsedDrop(true)
+    setUsedDrop(true);
     acceptedFiles.forEach((file) => {
-      const reader = new FileReader()
-      reader.onabort = () => console.log('file reading was aborted')
-      reader.onerror = () => console.log('file reading has failed')
+      const reader = new FileReader();
+      reader.onabort = () => console.log("file reading was aborted");
+      reader.onerror = () => console.log("file reading has failed");
       reader.onload = () => {
-      // Do whatever you want with the file contents
-        const fileContent = JSON.parse(reader.result)
-        setContent(fileContent)
-        console.log(fileContent)
-      }
+        // Do whatever you want with the file contents
+        const fileContent = JSON.parse(reader.result);
+        setContent(fileContent);
+        console.log(fileContent);
+      };
       reader.readAsText(file);
-    })
-    
-  }, [])
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+    });
+  }, []);
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   useEffect(() => {
-    if (usedDrop){
-      if ( Object.keys(content).length <= 1 ) {
-        const list = Object.values(content)[0]
-        setDataResult.mutate({
-          array: list,
-          token: localStorage.getItem("usertoken")
-        }, {
-          onSuccess: (res) => {
-            console.log("success",JSON.stringify(res.ECM))
-            setResponse(JSON.stringify(res.ECM))
+    if (usedDrop) {
+      if (Object.keys(content).length <= 1) {
+        const list = Object.values(content)[0];
+        setDataResult.mutate(
+          {
+            array: list,
+            token: localStorage.getItem("usertoken"),
           },
-          onError: (err) => {
-            toggle()
-            console.log("error",err)
+          {
+            onSuccess: (res) => {
+              console.log("success", JSON.stringify(res.ECM));
+              setResponse(JSON.stringify(res.ECM));
+            },
+            onError: (err) => {
+              toggle();
+              console.log("error", err);
+            },
           }
-        })
+        );
       } else {
-        toggle()
+        toggle();
       }
     }
-  }, [content, setDataResult, setResponse, toggle, usedDrop])
+  }, [content]);
 
   return (
     <Container>
       <Help onClick={toggle}>Help</Help>
       <Modal isShowing={isShowing} hide={toggle}></Modal>
       <div {...getRootProps()}>
-        <img alt="drop img logo"src={dropImg} />
+        <img alt="drop img logo" src={dropImg} />
         <input {...getInputProps()} />
         <p>Drag and drop a json file here, or click to select file</p>
         {usedDrop && <p>Thanks for your file</p>}
-        {Object.keys(content).map((key, i) => <h1 key={i} > {content[key].name}</h1>)}
+        {Object.keys(content).map((key, i) => (
+          <h1 key={i}> {content[key].name}</h1>
+        ))}
         <Button>Upload files</Button>
       </div>
-    </ Container>
-  )
+    </Container>
+  );
 }
