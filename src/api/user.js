@@ -15,7 +15,6 @@ import axios from 'axios'
     .catch(err => {
         throw err
     })
-    return params
 }
 
 export function register(params) {
@@ -36,7 +35,6 @@ export function register(params) {
     .catch(err => {
         throw err
     })
-    return params
 }
 
 export function dataResults(params) {

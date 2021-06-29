@@ -45,21 +45,9 @@ function RegisterForm() {
                 onSuccess: (res) => {
                     history.push("/login")
                     actions.setSubmitting(false)
-                    toast({
-                        title: "User created",
-                        status: "success",
-                        isClosable: true,
-                        duration: 5000,
-                      })
                 },
                 onError: (err) => {
                     actions.setSubmitting(false)
-                    toast({
-                        title: "User exists",
-                        status: "error",
-                        isClosable: true,
-                        duration: 5000,
-                      })
                 }
             })
           }, 1000)

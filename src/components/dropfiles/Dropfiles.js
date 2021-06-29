@@ -53,16 +53,16 @@ export function Dropfiles({setResponse}) {
         toggle()
       }
     }
-  }, [content])
+  }, [content, setDataResult, setResponse, toggle, useDrop])
 
   return (
     <Container>
       <Help onClick={toggle}>Help</Help>
       <Modal isShowing={isShowing} hide={toggle}></Modal>
       <div {...getRootProps()}>
-        <img src={dropImg} />
+        <img alt="drop img logo"src={dropImg} />
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Drag and drop a json file here, or click to select file</p>
         {usedDrop && <p>Thanks for your file</p>}
         {Object.keys(content).map((key, i) => <h1 key={i} > {content[key].name}</h1>)}
         <Button>Upload files</Button>

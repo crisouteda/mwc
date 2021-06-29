@@ -7,7 +7,7 @@ export function Result({response}) {
         <Container>
             <div>
                 <h1>Mean squared error</h1>
-                <img src={resultImg} />
+                <img alt="result logo" src={resultImg} />
                 {!isNaN(parseFloat(response).toFixed(2)) && 
                     <>
                         <h1>Here is your result!</h1>
