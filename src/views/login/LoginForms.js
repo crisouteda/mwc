@@ -27,7 +27,7 @@ function LoginForms() {
             loginFn.mutate(values, {
                 onSuccess: (res) => {
                     localStorage.setItem("usertoken", res.token)
-                    history("/")
+                    history.push("/")
                     actions.setSubmitting(false)
                 },
                 onError: (err) => {
