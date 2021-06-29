@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from "react"
+import {useHistory} from 'react-router'
 import { Dropfiles, Result } from "../../components"
 import {Container} from "./styles"
 
 export function Main() {
     const [response, setResponse] = useState("")
+    const history = useHistory()
     useEffect(() => {
-        console.log("en Main", response)
+        if (localStorage.getItem("usertoken") === null) {
+            history.push("/login")
+        }
     }, [response])
     return(
         <Container>
