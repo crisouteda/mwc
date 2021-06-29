@@ -1,6 +1,6 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, Alert, toast} from '@chakra-ui/react'
+import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, Alert} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
 import {useRegister} from '../../hooks/queries/user'
 import * as Yup from 'yup'
@@ -14,7 +14,6 @@ function RegisterForm() {
         return Yup.mixed().test({
             name: 'equalTo',
             exclusive: false,
-            message: msg || '${path} must be the same as ${reference}',
             params: {
                 reference: ref.path
             },
