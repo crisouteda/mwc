@@ -11,7 +11,7 @@ This repository contains code for the project build for Nuwe's Hackaton during B
 # Frontend 🎮
 
 ## Folder structure 📁
-
+```
 src/
 ┣ api/
 ┃ ┗ user.js
@@ -65,7 +65,7 @@ src/
 ┣ App.js
 ┣ index.css
 ┗ index.js
-
+```
 ## Libraries used 📚
 
 Some of the libraries used were:
